@@ -24,6 +24,14 @@ deploy-shinyappsio:
 deploy-cloud:
 	rsconnect deploy shiny . --name cloud-staging --title pyshiny-quarto-example
 
+.PHONY: deploy-shinyappsio-prod # Deploy to shinyapps io
+deploy-shinyappsio-prod:
+	rsconnect deploy shiny . --name perman-prod --title pyshiny-quarto-example
+
+.PHONY: deploy-cloud-prod # Deploy to posit.cloud
+deploy-cloud-prod:
+	rsconnect deploy shiny . --name cloud-prod --title pyshiny-quarto-example
+
 .PHONY: clean # Clean the directory.
 clean:
 	find . \( -name '*.pyc' -or -name '*.pyo' \) -print -delete
